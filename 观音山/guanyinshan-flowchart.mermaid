@@ -1,0 +1,121 @@
+graph TB
+    %% 样式定义
+    classDef mainStory fill:#ff9999,stroke:#333,stroke-width:3px
+    classDef sideStory fill:#99ccff,stroke:#333,stroke-width:2px
+    classDef branchNode fill:#ffcc99,stroke:#333,stroke-width:2px
+    classDef ending fill:#99ff99,stroke:#333,stroke-width:3px
+    classDef convergePoint fill:#ff99ff,stroke:#333,stroke-width:4px
+    
+    %% 主线剧情
+    MS1[主线剧情1: 记者顾舟抵达观音山村]:::mainStory
+    MS2[主线剧情2: 发现诡异村民和观音庙线索]:::mainStory
+    MS3[主线剧情3: 初探观音庙遭遇幻觉]:::mainStory
+    MS4[主线剧情4: 被困幻境身份被篡改]:::mainStory
+    MS5[主线剧情5: 找到村志和引魂灯]:::mainStory
+    MS6[主线剧情6: 最终对决观音像]:::mainStory
+    
+    %% 标记收束点
+    MS2:::convergePoint
+    MS4:::convergePoint
+    MS5:::convergePoint
+    
+    %% 分支节点
+    BN1{分支节点1: 如何调查?}:::branchNode
+    BN2{分支节点2: 是否去观音庙?}:::branchNode
+    BN3{分支节点3: 遭遇幻觉后?}:::branchNode
+    BN4{分支节点4: 被困后抗争?}:::branchNode
+    BN5{分支节点5: 如何破解?}:::branchNode
+    BN6{分支节点6: 最后关头?}:::branchNode
+    
+    %% 主要结局
+    E1[结局1: 永恒的囚徒]:::ending
+    E2[结局2: 迷失的旅人]:::ending
+    E3[结局3: 甜美的沉沦]:::ending
+    E4[结局4: 破碎的真相]:::ending
+    E5[结局5: 真相之光]:::ending
+    E6[结局6: 慈悲的救赎]:::ending
+    E7[结局7: 勇气的代价]:::ending
+    E8[结局8: 背叛的燃料]:::ending
+    E9[结局9: 永恒的守护]:::ending
+    E10[结局10: 血脉的献祭]:::ending
+    E11[结局11: 深渊的凝视]:::ending
+    E12[结局12: 肮脏的自由]:::ending
+    E13[结局13: 新神诞生]:::ending
+    E14[结局14: 人间之神]:::ending
+    E15[结局15: 攻心者]:::ending
+    
+    %% 主线流程
+    MS1 --> BN1
+    BN1 -->|谨慎探索| MS2
+    BN1 -->|接近老婆婆| SS1.2[支线1.2: 祠堂线索]:::sideStory
+    BN1 -->|拍照取证| SS1.3[支线1.3: 发现异象]:::sideStory
+    
+    MS2 --> BN2
+    BN2 -->|直接去| MS3
+    BN2 -->|深入调查| SS2.2[支线2.2: 医疗记录]:::sideStory
+    BN2 -->|唤醒男人| SS2.3[支线2.3: 黑色孢子]:::sideStory
+    
+    MS3 --> BN3
+    BN3 -->|立刻逃离| MS4
+    BN3 -->|强忍搜索| SS3.2[支线3.2: 人皮日记]:::sideStory
+    BN3 -->|尝试对话| E6
+    
+    MS4 --> BN4
+    BN4 -->|绝不屈服| MS5
+    BN4 -->|假装顺从| SS4.2[支线4.2: 发现规律]:::sideStory
+    BN4 -->|意志觉醒| E3
+    
+    MS5 --> BN5
+    BN5 -->|使用引魂灯| MS6
+    BN5 -->|物理破坏| SS5.2[支线5.2: 激怒邪神]:::sideStory
+    BN5 -->|两手准备| E4
+    
+    MS6 --> BN6
+    BN6 -->|恐惧失手| E1
+    BN6 -->|坚持到底| E5
+    BN6 -->|同归于尽| E4
+    
+    %% 重要支线深度展开
+    SS1.2 --> BN1.2{祠堂选择}:::branchNode
+    BN1.2 -->|去祠堂| SS1.2.1[族谱秘密]:::sideStory
+    BN1.2 -->|去观音庙| MS2
+    BN1.2 -->|反复奔波| MS4
+    
+    SS2.3 --> BN2.3{感染源}:::branchNode
+    BN2.3 -->|古井探索| SS2.3.1[发现菌毯]:::sideStory
+    BN2.3 -->|找医生资料| MS5
+    BN2.3 -->|被感染| E3
+    
+    SS3.2 --> BN3.2{黑雾选择}:::branchNode
+    BN3.2 -->|相机闪光| E4
+    BN3.2 -->|打火机| SS3.2.2[黑炎考验]:::sideStory
+    BN3.2 -->|同理心| E6
+    
+    SS4.2 --> BN4.2{村长博弈}:::branchNode
+    BN4.2 -->|策反失败| E8
+    BN4.2 -->|骗取信任| MS5
+    BN4.2 -->|直接摊牌| SS4.2.3[交易选择]:::sideStory
+    
+    %% 深度支线
+    SS3.2.2 --> BN3.2.2{黑炎掌控}:::branchNode
+    BN3.2.2 -->|净化一切| E11
+    BN3.2.2 -->|只审判邪像| E6
+    BN3.2.2 -->|吸收力量| E14
+    
+    SS4.2.3 --> BN4.2.3{最终选择}:::branchNode
+    BN4.2.3 -->|答应交易| E12
+    BN4.2.3 -->|意志对抗| SS4.2.3.2[心魔之战]:::sideStory
+    BN4.2.3 -->|假意答应| MS5
+    
+    SS4.2.3.2 --> BN4.2.3.2{对抗方式}:::branchNode
+    BN4.2.3.2 -->|坚守信念| E5
+    BN4.2.3.2 -->|以魔攻魔| E15
+    BN4.2.3.2 -->|被击溃| E1
+    
+    %% 标注关键路径
+    MS1 -.->|最短路径| MS2
+    MS2 -.->|最短路径| MS3
+    MS3 -.->|最短路径| MS4
+    MS4 -.->|最短路径| MS5
+    MS5 -.->|最短路径| MS6
+    MS6 -.->|最短路径| E5
